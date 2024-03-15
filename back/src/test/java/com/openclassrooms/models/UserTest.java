@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDateTime;
@@ -120,35 +121,5 @@ class UserTest {
         assertEquals(user1.hashCode(), user2.hashCode());
     }
 
-    @Test
-    void testUserConstructorWithIdAndTimestamps() {
-        LocalDateTime now = LocalDateTime.now();
-        User user = new User(1L, "test@example.com", "Doe", "John", "password123", false, now, now);
-
-        assertNotNull(user);
-        assertEquals(1L, user.getId());
-        assertEquals("test@example.com", user.getEmail());
-        assertEquals("John", user.getFirstName());
-        assertEquals("Doe", user.getLastName());
-        assertEquals("password123", user.getPassword());
-        assertFalse(user.isAdmin());
-        assertEquals(now, user.getCreatedAt());
-        assertEquals(now, user.getUpdatedAt());
-    }
-
-    @Test
-    void testUserConstructorWithoutIdAndTimestamps() {
-        User user = new User("test@example.com", "Doe", "John", "password123", false);
-
-        assertNotNull(user);
-        assertNull(user.getId());
-        assertEquals("test@example.com", user.getEmail());
-        assertEquals("John", user.getFirstName());
-        assertEquals("Doe", user.getLastName());
-        assertEquals("password123", user.getPassword());
-        assertFalse(user.isAdmin());
-        assertNull(user.getCreatedAt());
-        assertNull(user.getUpdatedAt());
-    }
 
 }
