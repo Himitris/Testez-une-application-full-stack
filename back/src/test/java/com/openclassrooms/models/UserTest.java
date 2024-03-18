@@ -8,13 +8,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDateTime;
 
@@ -39,6 +33,42 @@ class UserTest {
 
         // Then
         assertTrue(isValid);
+    }
+   
+    @Test
+    void testConstructor() {
+        // Given
+        Long id = 1L;
+        String email = "test@example.com";
+        String firstName = "John";
+        String lastName = "Doe";
+        String password = "password123";
+        boolean admin = false;
+        LocalDateTime createdAt = LocalDateTime.now();
+        LocalDateTime updatedAt = LocalDateTime.now();
+
+        // When
+        User user = new User(email, lastName, firstName, password, admin);
+        User user2 = new User(id, email, lastName, firstName, password, admin, createdAt, updatedAt);
+
+        // Then
+        assertNotNull(user);
+        assertEquals(email, user.getEmail());
+        assertEquals(firstName, user.getFirstName());
+        assertEquals(lastName, user.getLastName());
+        assertEquals(password, user.getPassword());
+        assertEquals(admin, user.isAdmin());
+
+        
+        assertNotNull(user2);
+        assertEquals(id, user2.getId());
+        assertEquals(email, user2.getEmail());
+        assertEquals(firstName, user2.getFirstName());
+        assertEquals(lastName, user2.getLastName());
+        assertEquals(password, user2.getPassword());
+        assertEquals(admin, user2.isAdmin());
+        assertEquals(createdAt, user2.getCreatedAt());
+        assertEquals(updatedAt, user2.getUpdatedAt());
     }
 
     @Test
@@ -118,6 +148,18 @@ class UserTest {
     void testHashCodeWithEquivalentUsers() {
         User user1 = new User("test@example.com", "John", "Doe", "password123", false);
         User user2 = new User("test@example.com", "John", "Doe", "password123", false);
+        assertEquals(user1.hashCode(), user2.hashCode());
+    }
+    
+    @Test
+    void testEqualsAndHashCode() {
+        // Given
+        Long id = 1L;
+        User user1 = new User(id, "test@example.com", "Doe", "John", "password123", false, null, null);
+        User user2 = new User(id, "test@example.com", "Doe", "Jane", "password123", false, null, null);
+
+        // Then
+        assertEquals(user1, user2);
         assertEquals(user1.hashCode(), user2.hashCode());
     }
 
