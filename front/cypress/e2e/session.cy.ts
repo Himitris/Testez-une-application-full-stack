@@ -1,4 +1,4 @@
-describe('empty spec', () => {
+describe('Details spec', () => {
   beforeEach(() => {
     cy.login('yoga@studio.com', 'test!1234');
     cy.contains('Detail').click();

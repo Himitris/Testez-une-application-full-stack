@@ -1,4 +1,8 @@
 describe('Login spec', () => {
+  it('Login not found', () => {
+    cy.visit('/logine');
+    cy.contains('Page not found !').should('be.visible');
+  });
   it('Login failled', () => {
     cy.visit('/login');
 

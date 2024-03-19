@@ -1,4 +1,4 @@
-package com.openclassrooms.mapper;
+package com.openclassrooms.starterjwt.mapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,8 +9,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import com.openclassrooms.starterjwt.dto.TeacherDto;
-import com.openclassrooms.starterjwt.mapper.TeacherMapper;
-import com.openclassrooms.starterjwt.mapper.TeacherMapperImpl;
 import com.openclassrooms.starterjwt.models.Teacher;
 
 class TeacherMapperTest {

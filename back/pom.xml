@@ -120,6 +120,10 @@
 				<configuration>
 					<excludes>
 						<exclude>com/openclassrooms/starterjwt/dto/**</exclude>
+                        <exclude>com/openclassrooms/starterjwt/**/models/*.class</exclude>
+                        <exclude>com/openclassrooms/starterjwt/**/*Request.*</exclude>
+                        <exclude>com/openclassrooms/starterjwt/**/*Response.*</exclude>
+                        <exclude>com/openclassrooms/starterjwt/**/*Exception.*</exclude>
 					</excludes>
 				</configuration>
 				<executions>

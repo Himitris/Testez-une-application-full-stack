@@ -1,5 +1,4 @@
-package com.openclassrooms.controllers;
-import com.openclassrooms.starterjwt.controllers.UserController;
+package com.openclassrooms.starterjwt.controllers;
 import com.openclassrooms.starterjwt.dto.UserDto;
 import com.openclassrooms.starterjwt.mapper.UserMapper;
 import com.openclassrooms.starterjwt.models.User;

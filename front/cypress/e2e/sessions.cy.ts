@@ -1,4 +1,4 @@
-describe('sessions spec', () => {
+describe('Sessions spec', () => {
 
   beforeEach(() => {
     cy.login('yoga@studio.com', 'test!1234');

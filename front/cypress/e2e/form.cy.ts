@@ -1,4 +1,4 @@
-describe('empty spec', () => {
+describe('Form spec', () => {
 
   beforeEach(() => {
     cy.login('yoga@studio.com', 'test!1234');

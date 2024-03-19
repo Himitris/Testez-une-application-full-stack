@@ -1,72 +1,39 @@
-# Yoga
+# Yoga app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+Yoga is a booking platform for Yoga sessions.
 
-## Start the project
+This is the Yoga app front-end.
 
-Git clone:
+## Installation
 
-> git clone https://github.com/OpenClassrooms-Student-Center/P5-Full-Stack-testing
+To install the necessary dependencies for the app, run the following command in your terminal:
 
-Go inside folder:
+npm install
 
-> cd yoga
+This will install all dependencies listed in the package.json file
 
-Install dependencies:
+## Tests
 
-> npm install
+### Unitary and Integration Tests
 
-Launch Front-end:
+Execute [npm run test] to launch unit and integration tests.
 
-> npm run start;
+Tests report with code coverage is available at [coverage/jest/lcov-report/index.html].
 
+### E2E Tests
 
-## Ressources
+Execute [npm run e2e] to launch the e2e tests.
 
-### Mockoon env 
+Select a browser and run ONLY [all.cy.ts] file in order to launch all the tests in one time and get the global code coverage (run another test file will erase the previous code coverage data).
 
-### Postman collection
+Then execute [npm run e2e:coverage] to calculate the code coverage.
 
-For Postman import the collection
+Tests report with code coverage is available at [coverage/lcov-report/index.html].
 
-> ressources/postman/yoga.postman_collection.json 
+## Run
 
-by following the documentation: 
+To run the app in dev mode, execute [npm run start].
 
-https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#importing-data-into-postman
+In a browser go to [http://localhost:4200] to use the app (start the back-end before !).
 
-
-### MySQL
-
-SQL script for creating the schema is available `ressources/sql/script.sql`
-
-By default the admin account is:
-- login: yoga@studio.com
-- password: test!1234
-
-
-### Test
-
-#### E2E
-
-Launching e2e test:
-
-> npm run e2e
-
-Generate coverage report (you should launch e2e test before):
-
-> npm run e2e:coverage
-
-Report is available here:
-
-> front/coverage/lcov-report/index.html
-
-#### Unitary test
-
-Launching test:
-
-> npm run test
-
-for following change:
-
-> npm run test:watch
+## Folder structure
